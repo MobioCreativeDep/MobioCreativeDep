@@ -1,0 +1,290 @@
+@font-face {
+	font-family:'Medium';
+	src: url('LMMain-Medium.otf');
+}
+
+@font-face {
+	font-family:'Bold';
+	src: url('LMMain-Bold.otf');
+}
+
+* {
+    -webkit-box-sizing:border-box;
+    box-sizing:border-box;
+}
+
+html, body {
+    height:100%;
+    margin:0 auto;
+}
+
+.banner {
+    width:1080px;
+    height: 1350px;
+    position:relative;
+    overflow:hidden;
+    padding: 108px;
+    background:#5AB030;   
+}
+
+.textblock {
+    user-select: none;
+    position:relative;
+    font-size:50px;
+    line-height: 95%;
+    font-family:'Medium';
+    color: white;
+    width: 100%;
+    height: 240px;
+    margin-bottom: 90px;
+    animation: appear 2s cubic-bezier(0.230, 1.000, 0.320, 1.000);
+}
+
+.textblock span {
+    font-size:95px;
+    line-height: 95%;
+    font-family:'Bold';
+}
+
+.option {
+    user-select: none;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 865px;
+    height: 205px;
+    margin-bottom: 15px;
+    background: white;
+    border-radius: 25px;
+    opacity: 0;
+    animation: appear 2s cubic-bezier(0.230, 1.000, 0.320, 1.000) forwards;
+}
+
+.frst {
+    animation-delay: .2s;
+}
+
+.scnd {
+    animation-delay: .4s;
+}
+
+.thrd {
+    animation-delay: .6s;
+}
+
+
+.stylename {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center; 
+}
+
+.digit {
+    width: 205px;
+    text-align: center;
+    font-size:115px;
+    line-height: auto;
+    font-family:'Bold';
+    color: #5AB030;
+    padding-bottom: 5px;
+}
+
+.style {
+    width: 660px;
+    text-align: left;
+    font-size:62px;
+    font-family:'Medium';
+    color: black;
+    padding-top: 30px;
+}
+
+.toy {
+    position: absolute;
+    opacity: 0;
+    animation: appear 2s cubic-bezier(0.230, 1.000, 0.320, 1.000) forwards;
+}
+
+.toy IMG {
+    width: 100%;
+    height: 100%;
+}
+
+.flower {
+    width: 315px;
+    height: 295px;
+    top: 1020px;
+    left: 217px;
+    animation-delay: 200ms;
+}
+
+.house {
+    width: 523px;
+    height: 617px;
+    top: 215px;
+    left: 557px;
+    animation-delay: 300ms;
+}
+
+.option:hover {
+    cursor: pointer;
+    background: #FFE55A;
+    color: white;
+    transform: scale(120%) translateY(-200px);
+    transition: 0.5s;
+}
+
+.option:active {
+    cursor: default !important;
+    background: white;
+    color: white;
+    transition: 0.5s forwards;
+}
+
+.disappear {
+    animation: disappear 1s cubic-bezier(0.480, 0.025, 0.960, 0.495) forwards;
+    cursor: default !important;
+}
+
+.second-sc {
+    position: absolute;
+    width: 1080px;
+    height: 1350px;
+    bottom: 0;
+    left: 0;
+}
+
+.picture {
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;;
+    width: 1080px;
+    height: 972px;
+}
+
+.mask {
+    position: absolute;
+    bottom: 0;
+    width: 1080px;
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-start;
+}
+
+.rect {
+    background: #5AB030;
+    opacity: 1 !important;
+    position: relative;
+    display: inline-block;
+    transform: scaleX(101%) translateY(-328px);
+}
+
+.first-rect {
+    width: 216px;
+    height: 702px;
+}
+
+.second-rect {
+    width: 324px;
+    height: 485px;
+}
+
+.third-rect {
+    width: 540px;
+    height: 594px;
+}
+
+.packtext {
+    position:relative;
+    font-size:98px;
+    line-height: 95%;
+    font-family:'Bold';
+    color: white;
+    width: 100%;
+    height: 270px;
+    opacity: 0;
+    align-items: baseline;
+    padding: 930px 0 0 108px;
+}
+
+.packtext span {
+    font-size:43px;
+    line-height: 95%;
+    font-family:'Medium';
+}
+
+.phone {
+    position: absolute;
+    width: 398px;
+    height: 811px;
+    top: 70px;
+    right: 70px;
+    opacity: 0;
+}
+
+.frame {
+    position: absolute;
+    background-image: url("iphone.png");
+    width: 398px;
+    height: 811px;
+}
+
+.kolbasa {
+    position: absolute;
+    overflow: hidden;
+    background-image: url("iphone.png");
+    width: 361px;
+    height: 704px;
+    top: 100px;
+    left: 18px;
+    border-radius: 0 0 40px 40px;
+}
+
+.phone IMG {
+    position: absolute;
+    animation: scroll 30s linear 2s infinite;
+}
+
+.second-appear {
+    animation: scnd-scene-in 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) forwards;
+}
+
+.logo {
+    position:absolute;
+    bottom: 0;
+    right: 108px;
+    width: 324px;
+    height: 155px;
+}
+
+.logo IMG {
+    width: 100%;
+}
+
+
+
+
+/* Анимация */
+
+@keyframes appear {
+	0%		{ transform: scale(110%) translateY(300px); opacity: 0; }
+	100%	{ transform: scale(100%) translateY(0px); opacity: 1; }
+}
+
+@keyframes disappear {
+	0%		{ transform: scale(100%) translateY(0px); opacity: 1; }
+	100%	{ transform: scale(80%) translateY(300px); opacity: 0; }
+}
+
+@keyframes scnd-scene-in {
+    0%      {transform: scaleX(101%) translateY(-328px); opacity: 0;}
+    100%    {transform: scaleX(101%) translateY(0px); opacity: 1;}
+}
+
+@keyframes scroll {
+    0%      {transform: translateY(0px); }
+    100%    {transform: translateY(-2600px); }
+}
