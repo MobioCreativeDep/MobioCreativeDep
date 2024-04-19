@@ -25,6 +25,22 @@ document.addEventListener('DOMContentLoaded', function() {
             select.addEventListener('click', function() {
                 
                 addDisappearClass(option, 0);
+
+                option.forEach(function(other) {
+
+                    // Проверяем, не является ли текущий элемент выбранным
+                    if (other !== select) {
+                        
+                        var child = other.querySelectorAll('.style, .digit');
+                        // Присваиваем класс всем элементам, кроме выбранного
+                        other.classList.add('deselect');
+
+                        child.forEach(function(whiteChild) {
+                            whiteChild.classList.add('white-txt')
+                        });
+                    }
+                });
+                
                 addDisappearClass(toys, 200);
 
                 setTimeout(function() {
@@ -34,9 +50,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 var style_img = select.getAttribute('data-image');
                 image.src = style_img;
 
-                setTimeout(function() {
-                    mainrm.remove();
-                }, delay * (lenght + 1) + scnd_offset);
+                setTimeout(function () {
+                     mainrm.remove();
+                 }, delay * (lenght + 1) + scnd_offset);
 
                 setTimeout(function() {
                     final_text.classList.add('second-appear');
@@ -59,6 +75,6 @@ document.addEventListener('DOMContentLoaded', function() {
                
                 console.log(lenght);
             });
-        }, 1500);
+        }, 1000);
     })
 });
