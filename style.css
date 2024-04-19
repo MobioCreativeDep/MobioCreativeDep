@@ -238,9 +238,9 @@ html, body {
     background-image: url("iphone.png");
     width: 361px;
     height: 704px;
-    top: 100px;
+    top: 36px;
     left: 18px;
-    border-radius: 0 0 40px 40px;
+    border-radius: 20px 20px 40px 40px;
 }
 
 .phone IMG {
