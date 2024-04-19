@@ -53,9 +53,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 var style_img = select.getAttribute('data-image');
                 image.src = style_img;
 
-                // setTimeout(function () {
-                //      mainrm.remove();
-                //  }, delay * (lenght + 1) + scnd_offset);
+                setTimeout(function () {
+                      mainrm.remove();
+                  }, delay * (lenght + 1) + scnd_offset);
 
                 setTimeout(function() {
                     final_text.classList.add('second-appear');
