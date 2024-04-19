@@ -7,27 +7,25 @@ document.addEventListener('DOMContentLoaded', function() {
     var final_text = document.querySelector('.packtext');
     var toys = document.querySelectorAll('.toy');
     var phone = document.querySelector('.phone')
+    var mainrm = document.getElementById("toRemove");
     var delay = 50;
     var scnd_offset = 1000; 
     var lenght = option.length;
+
+    function addDisappearClass(elements, offset) {
+        elements.forEach(function(element, i) {
+            setTimeout(function() {
+                element.classList.add('disappear');
+            }, delay * (length - i) + offset);
+        });
+    }
     
     option.forEach(function(select) {
        setTimeout(function() { 
             select.addEventListener('click', function() {
                 
-                option.forEach(function(eachopt, i){
-
-                    setTimeout(function() {
-                        eachopt.classList.add('disappear');
-                    }, delay * (lenght - i));
-                });
-
-                toys.forEach(function(eachopt, i){
-
-                    setTimeout(function() {
-                        eachopt.classList.add('disappear');
-                    }, delay * (lenght - i)+200);
-                });
+                addDisappearClass(option, 0);
+                addDisappearClass(toys, 200);
 
                 setTimeout(function() {
                     text.classList.add('disappear');
@@ -35,6 +33,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 var style_img = select.getAttribute('data-image');
                 image.src = style_img;
+
+                setTimeout(function() {
+                    mainrm.remove();
+                }, delay * (lenght + 1) + scnd_offset);
 
                 setTimeout(function() {
                     final_text.classList.add('second-appear');
@@ -48,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     setTimeout(function() {
                         rects.classList.add('second-appear');
-                    }, delay * (lenght - k) + scnd_offset + 200);
+                    }, delay * (lenght - k) + scnd_offset + 100);
                 });
 
                 setTimeout(function() {

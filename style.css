@@ -245,7 +245,7 @@ html, body {
 
 .phone IMG {
     position: absolute;
-    animation: scroll 30s linear 2s infinite;
+    animation: scroll 60s linear infinite;
 }
 
 .second-appear {
@@ -286,5 +286,5 @@ html, body {
 
 @keyframes scroll {
     0%      {transform: translateY(0px); }
-    100%    {transform: translateY(-2600px); }
+    100%    {transform: translateY(-2613px); }
 }
