@@ -89,7 +89,8 @@ html, body {
     background-color:#FFE55A;
 }
 .press {
-    animation: press 1s ease-in-out forwards;
+    animation: press ease-in-out forwards;
+    animation-duration: 1s;
 }
 
 .logo {

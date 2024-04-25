@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     var option = document.querySelectorAll('.button-ch');
+    var const = document.getElementsByClassName('press').animation-duration;
     
     option.forEach(function(select) {
        setTimeout(function() { 
@@ -8,6 +9,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 select.classList.add('press');
 
             });
-        }, 1700);
+        }, 0);
     })
 });
