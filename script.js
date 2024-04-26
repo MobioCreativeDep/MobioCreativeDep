@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
             setTimeout(function() {
                 element.classList.remove(clas);
                 element.classList.add('fullop');                
-            }, 1000 + (delay + 1    ) * i + offset);
+            }, 1000 + (delay + 1) * i + offset);
 
         });
     }
@@ -33,6 +33,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 setTimeout(function() {
                     select.classList.remove('press');
                 }, 1000);
+
+                option.forEach(function(other) {
+
+                    if (other !== select) {
+
+                        other.classList.remove('fullop');    
+                        other.classList.add('deselect');
+
+                    }
+
+                });
 
                 var style_img = select.getAttribute('data-image');
                 imgone.src = style_img;
