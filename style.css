@@ -89,6 +89,7 @@ html, body {
     transform: scale(90%);
     background-color:#FFE55A;
 }
+
 .press {
     animation: press ease-in-out forwards;
     animation-duration: 1s;
@@ -106,8 +107,14 @@ html, body {
     height: 155px;
 }
 
+/* Help */
+
 .onestsc {
     transform: scale(100%);
+}
+
+.fullop {
+    opacity: 1;
 }
 
 
