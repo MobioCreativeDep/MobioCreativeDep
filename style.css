@@ -82,6 +82,7 @@ html, body {
     border-radius: 20px;
     overflow: hidden;
     background-color:white;
+    opacity: 0;
 }
  
 .button-ch:active {
@@ -94,7 +95,7 @@ html, body {
 }
 
 .appear {
-    animation: appear 1s ease-in-out forwards;
+    animation: appear 1s ease-out forwards;
 }
 
 .logo {
@@ -105,10 +106,15 @@ html, body {
     height: 155px;
 }
 
+.onestsc {
+    transform: scale(100%);
+}
+
 
 .logo IMG {
     width: 100%;
 }
+
 
 /* Animation */
 

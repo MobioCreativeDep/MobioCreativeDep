@@ -1,25 +1,23 @@
 document.addEventListener('DOMContentLoaded', function() {
     var option = document.querySelectorAll('.button-ch');
-    var ch_text = document.querySelectorAll('.ch-text');
+    var frstsc = document.querySelectorAll('.onestsc');
+    var scndsc = document.querySelectorAll('.twostsc');
+    const delay = 100;
 
+    function addAppearClass(elements, offset, clas) {
 
-    function addMultipleClass(elements, offset, class) {
         elements.forEach(function(element, i) {
+
             setTimeout(function() {
-                element.classList.add(class);
-            }, delay * (length - i) + offset);
+                element.classList.add(clas);
+            }, delay * i + offset);
+
         });
     }
 
-     var apgroup = option[0,1,2] + ch_text[0];
-
-    addMultipeClass(option, 0, 'appear');
-    
-
+    addAppearClass(frstsc, 0, 'appear');
+           
     option.forEach(function(select) {
-
-       
-
 
        setTimeout(function() { 
             select.addEventListener('click', function() {
