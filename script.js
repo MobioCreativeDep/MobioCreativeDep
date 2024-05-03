@@ -1,32 +1,56 @@
 document.addEventListener('DOMContentLoaded', function() {
-    var option = document.querySelectorAll('.button-ch');
-    var frstsc = document.querySelectorAll('.onestsc');
-    var scndsc = document.querySelectorAll('.twostsc');
+    var option1 = document.querySelectorAll('.onestsc');
+    var option2 = document.querySelectorAll('.twostsc');
+    var anim1 = document.querySelectorAll('.angrp1');
+    var anim2 = document.querySelectorAll('.angrp2');
+    var anim3 = document.querySelectorAll('.angrp3');
     var imgone = document.querySelector('.kitchen-over');
-    const delay = 100;
+    var imgtwo = document.querySelector('.table-over');
+    var divone = document.querySelector('.first_ch');
+    var divtwo = document.querySelector('.second_ch');
+    var pack = document.querySelector('.packshot');
+    const delay = 300;
 
-    function addAppearClass(elements, offset, clas) {
+    function addAppearaddClasss(elements, rmOffset, addClass, rmClass) {
 
         elements.forEach(function(element, i) {
 
             setTimeout(function() {
-                element.classList.add(clas);
-            }, delay * i + offset);
+                element.classList.add(addClass);
+            }, delay * i);
 
             setTimeout(function() {
-                element.classList.remove(clas);
+                element.classList.remove(rmClass);
                 element.classList.add('fullop');                
-            }, 1000 + (delay + 1) * i + offset);
+            }, rmOffset + (delay + 1) * i);
 
         });
     }
 
-    addAppearClass(frstsc, 0, 'appear');
-           
-    option.forEach(function(select) {
 
-       setTimeout(function() { 
+    function addPress(element) {
+
+        element.classList.add('press');
+
+                setTimeout(function() {
+                    element.classList.remove('press');
+                }, 1000);
+
+    }
+
+
+    addAppearaddClasss(anim1, 1000, 'appear', 'angrp1');
+
+
+    console.log(option1);
+           
+    option1.forEach(function(select) {
+
+        setTimeout(function() { 
+
             select.addEventListener('click', function() {
+
+                console.log(select);
                 
                 select.classList.add('press');
 
@@ -34,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     select.classList.remove('press');
                 }, 1000);
 
-                option.forEach(function(other) {
+                option1.forEach(function(other, i) {
 
                     if (other !== select) {
 
@@ -45,11 +69,86 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 });
 
+                setTimeout(function() {
+                    select.classList.remove('press');
+                }, 1000);
+
+                anim1.forEach(function(element, i) {
+
+                    setTimeout(function() {
+                        element.classList.add('disappear');
+                    },1000 + delay * i);
+        
+                });
+
+                setTimeout(function() {
+                    divone.remove();
+                },3000 );
+
+                setTimeout(function() {
+
+                    divtwo.classList.remove('noop');
+                    addAppearaddClasss(anim2, 2000, 'appear');
+                    
+                }, 2000);
+
                 var style_img = select.getAttribute('data-image');
                 imgone.src = style_img;
 
                 console.log(style_img);
+
             });
         }, 1000);
+    })
+
+    option2.forEach(function(select) {
+
+        setTimeout(function() { 
+
+            select.addEventListener('click', function() {
+
+                console.log(select);
+                
+                addPress(select);
+
+                option2.forEach(function(other, i) {
+
+                    if (other !== select ) {
+
+                        other.classList.remove('fullop');    
+                        other.classList.add('deselect');
+
+                    }
+
+                });
+
+                anim2.forEach(function(element, i) {
+
+                    setTimeout(function() {
+                        element.classList.add('disappear');
+                    },1000 + delay * i);
+        
+                });
+
+                imgtwo.classList.add('appear');
+
+                setTimeout(function() {
+                    divtwo.remove();
+                },3000 );
+
+                setTimeout(function() {
+
+                    pack.classList.remove('noop');
+                    addAppearaddClasss(anim3, 2000, 'packappear');
+                    
+                }, 2000);
+
+                var style_img = select.getAttribute('data-image');
+                imgtwo.src = style_img;
+
+                console.log(style_img);
+
+            });
+        },200);
     })
 }); 

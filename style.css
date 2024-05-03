@@ -42,21 +42,19 @@ html, body {
     height: 1350px;
 }
 
-.kitchens IMG {
-    position: relative;
-}
-
-
-
 
 /* Menu */
 
+.menu {
+    position: absolute;
+}
+
 .menu-box {
-    position: relative;
+    position: absolute;
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: 578px;
+    width: 864px;
+    height: 400px;
 }
 
 .ch-text {
@@ -90,13 +88,95 @@ html, body {
     background-color:#FFE55A;
 }
 
-.press {
-    animation: press ease-in-out forwards;
-    animation-duration: 1s;
+.table-over {
+    position: absolute;
+    top: 790px;
+    left: -100px;
 }
 
-.appear {
-    animation: appear 1s ease-out forwards;
+.mask {
+    position: absolute;
+    width: 1080px;
+    height: 867px;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.rect {
+    background: #5AB030;
+    opacity: 1;
+    position: relative;
+    display: inline-block;
+    transform: scaleX(101%);
+}
+
+.first-rect {
+    width: 540px;
+    height: 756px;
+}
+
+.second-rect {
+    width: 324px;
+    height: 867px;
+}
+
+.third-rect {
+    width: 216px;
+    height: 756px;
+}
+
+.packshot {
+    position:absolute;
+    width: 1080px;
+    height: 1350px;
+    top: 0;
+    left: 0;
+    z-index: 5;
+}
+
+.offer {
+    position:absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 100%;
+    height: 700px;
+    padding: 90px 108px 108px 108px;
+
+}
+
+.head {
+    position:relative;
+    font-size: 120px;
+    font-family:'Bold';
+    color: white;
+    line-height: 118px;
+    width: 100%;
+}
+
+
+.sub {
+    position: relative;
+    width: 100%;
+    font-size:47px;
+    font-family:'Medium';
+    color: white;
+}
+
+.btn {
+    position: relative;
+    font-size:57px;
+    font-family:'Medium';
+    width: 542px;
+    color: white;
+    border-radius: 17px;
+    border-width: 6px;
+    border-color: white;
+    border-style: solid;
+    padding: 40px 167px;
+    margin-top: 20px;
 }
 
 .logo {
@@ -117,16 +197,52 @@ html, body {
     width: 100%;
 }
 
-.kitappear {
-    animation: opup 1s ease-out forwards;
-}
 
 .deselect {
     opacity: .5;
 }
 
+.noop {
+    opacity: 0;
+}
+
+.first_ch {
+    z-index: 10;
+}
+
+.second_ch {
+    z-index: 9;
+}
+
+.angrp3 {
+    transform: translateY(-300px);
+    opacity: 0;
+}
 
 /* Animation */
+
+.press {
+    animation: press ease-in-out forwards;
+    animation-duration: 1s;
+}
+
+.appear {
+    animation: appear 1s ease-out forwards;
+}
+
+.disappear {
+    animation: disappear 1s ease-in forwards;
+}
+
+.kitappear {
+    animation: op 1s ease-out forwards;
+}
+
+.packappear {
+    animation: pack 1s ease-out forwards;
+}
+
+/* Frames */
 
 @keyframes press {
     0%     {transform: scale(90%);}
@@ -137,10 +253,20 @@ html, body {
 
 @keyframes appear {
     0%     {transform: translateY(100px); opacity: 0;}
-    100%   {transform: scale(100%); opacity: 1;}
+    100%   {transform: translateY(0px); opacity: 1;}
 }
 
-@keyframes opup {
+@keyframes op {
     0%     {opacity: 0;}
     100%   {opacity: 1;}
+}
+
+@keyframes disappear {
+    0%     {transform: translateY(0px); }
+    100%   {transform: translateY(-100px); opacity: 0;}
+}
+
+@keyframes pack {
+    0%     {transform: translateY(-300px); opacity: 0;}
+    100%   {transform: translateY(0px); opacity: 1;}
 }
