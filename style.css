@@ -82,6 +82,12 @@ html, body {
     background-color:white;
     opacity: 0;
 }
+
+.kitchens IMG {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
  
 .button-ch:active {
     transform: scale(90%);
@@ -89,9 +95,9 @@ html, body {
 }
 
 .table-over {
-    position: absolute;
-    top: 790px;
-    left: -100px;
+    position: absolute !important;
+    top: 790px !important;
+    left: -100px !important;
 }
 
 .mask {
@@ -239,7 +245,12 @@ html, body {
 }
 
 .packappear {
-    animation: pack 1s ease-out forwards;
+    animation: pack 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+}
+
+.blinking {
+    animation: blink 10s ease-out forwards;
+    animation-iteration-count: infinite;
 }
 
 /* Frames */
@@ -269,4 +280,18 @@ html, body {
 @keyframes pack {
     0%     {transform: translateY(-300px); opacity: 0;}
     100%   {transform: translateY(0px); opacity: 1;}
+}
+
+@keyframes blink {
+    0%     {opacity: 0;}
+    10%    {opacity: 1;}
+    20%    {opacity: 0;}
+    30%    {opacity: 1;}
+    40%    {opacity: 0;}
+    50%    {opacity: 1;}
+    60%    {opacity: 0;}
+    70%    {opacity: 1;}
+    80%    {opacity: 0;}
+    90%    {opacity: 1;}
+    100%   {opacity: 0;}
 }

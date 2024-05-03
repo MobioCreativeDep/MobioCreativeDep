@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', function() {
     var anim3 = document.querySelectorAll('.angrp3');
     var imgone = document.querySelector('.kitchen-over');
     var imgtwo = document.querySelector('.table-over');
+    var ktLine = document.querySelector('.kitchen-line');
+    var tbLine = document.querySelector('.table-line');
     var divone = document.querySelector('.first_ch');
     var divtwo = document.querySelector('.second_ch');
     var pack = document.querySelector('.packshot');
@@ -53,6 +55,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.log(select);
                 
                 select.classList.add('press');
+                ktLine.remove();
+                tbLine.classList.remove('noop');
+                tbLine.classList.add('blinking');
 
                 setTimeout(function() {
                     select.classList.remove('press');
@@ -110,6 +115,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.log(select);
                 
                 addPress(select);
+                tbLine.remove();
 
                 option2.forEach(function(other, i) {
 
@@ -136,12 +142,20 @@ document.addEventListener('DOMContentLoaded', function() {
                     divtwo.remove();
                 },3000 );
 
+                console.log(anim3);
+
                 setTimeout(function() {
 
                     pack.classList.remove('noop');
-                    addAppearaddClasss(anim3, 2000, 'packappear');
+                    anim3.forEach(function(element, i) {
+
+                        setTimeout(function() {
+                            element.classList.add('packappear');
+                        }, delay / 6 * (5 - i));
+                        
+                    });
                     
-                }, 1000);
+                }, 2000);
 
                 var style_img = select.getAttribute('data-image');
                 imgtwo.src = style_img;
