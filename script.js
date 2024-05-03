@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 
-    addAppearaddClasss(anim1, 1000, 'appear', 'angrp1');
+    addAppearaddClasss(anim1, 1000, 'appear', 'appear');
 
 
     console.log(option1);
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 setTimeout(function() {
 
                     divtwo.classList.remove('noop');
-                    addAppearaddClasss(anim2, 2000, 'appear');
+                    addAppearaddClasss(anim2, 2000, 'appear', 'appear');
                     
                 }, 2000);
 
@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     pack.classList.remove('noop');
                     addAppearaddClasss(anim3, 2000, 'packappear');
                     
-                }, 2000);
+                }, 1000);
 
                 var style_img = select.getAttribute('data-image');
                 imgtwo.src = style_img;
