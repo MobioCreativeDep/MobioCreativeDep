@@ -3,68 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="preload" href="beige_kitchen.jpg" as="image">
-    <link rel="preload" href="main_kitchen.jpg" as="image">
-    <link rel="preload" href="green_kitchen.jpg" as="image">
-    <link rel="preload" href="grey_kitchen.jpg" as="image">
-    <link rel="preload" href="Table_1.png" as="image">
-    <link rel="preload" href="Table_2.png" as="image">
-    <link rel="preload" href="Table_3.png" as="image">
     <title> Leroy Merlin Playable 1 </title>
 </head>
 <body>
     <div class="banner">
-        <div class="kitchens">
-            <img src=""  alt="" class="kitchen-over">
-            <img src=""  alt="" class="table-over">
-            <img src="kitchen_line.svg"  alt="" class="kitchen-line blinking">
-            <img src="table_line.svg"  alt="" class="table-line noop">
-        </div> 
-        <div class="menu">
-            <div class="first_ch menu-box">
-                <div class="menu-row ch-text angrp1"> Выберите кухню:</div>
-                <div class="menu-row buttons">
-                    <div class="button-ch onestsc angrp1" data-image="beige_kitchen.jpg">
-                        <img src="ktch-btn-1.jpg" alt="Серая кухня">
-                    </div>
-                    <div class="button-ch onestsc angrp1" data-image="green_kitchen.jpg">
-                        <img src="ktch-btn-2.jpg" alt="Зеленая кухня">
-                    </div>
-                    <div class="button-ch onestsc angrp1" data-image="grey_kitchen.jpg">
-                        <img src="ktch-btn-3.jpg" alt="Бежевая кухня">
-                    </div>
-                    
+        <div class="second-sc">
+            <div class="picture">
+                <img id="heroimg" src="loft_image.jpg">
+            </div>
+            <div class="mask">
+                <div class="rect first-rect"></div>
+                <div class="rect second-rect"></div>
+                <div class="rect third-rect"></div>
+            </div>
+            <div class="packtext">Собери свой интерьер<br><span>в приложении Леруа Мерлен</span>
+            </div>
+            <div class="phone">
+                <div class="kolbasa">
+                    <img src="kolbasa.png" alt="kolbasa">
+                </div>
+                <div class="frame"></div>
+            </div>
+        </div>
+        <div id="toRemove" class="first-sc">
+            <div class="textblock">А какой ваш<br><span>любимый стиль интерьера</span></div>
+            <div class="options">
+                <div class="option frst" data-image="loft_image.jpg">
+                    <div class="stylename"><span class="digit">1</span><span class="style">Лофт</span></div>
+                </div>
+                <div class="option scnd" data-image="min_image.jpg">
+                    <div class="stylename"><span class="digit">2</span><span class="style">Минимализм</span></div>
+                </div>
+                <div class="option thrd" data-image="scan_image.jpg">
+                    <div class="stylename"><span class="digit">3</span><span class="style">Скандинавский</span></div>
                 </div>
             </div>
-            <div class="second_ch menu-box noop">
-                <div class="menu-row ch-text angrp2">Выберите стол:</div>
-                <div class="menu-row buttons">
-                    <div class="button-ch twostsc angrp2"  data-image="Table_1.png">
-                        <img src="tbl-btn-1.jpg" alt="Стол1">
-                    </div>
-                    <div class="button-ch twostsc angrp2" data-image="Table_2.png">
-                        <img src="tbl-btn-2.jpg" alt="Стол2">
-                    </div>
-                    <div class="button-ch twostsc angrp2" data-image="Table_3.png">
-                        <img src="tbl-btn-3.jpg" alt="Стол3">
-                </div>
-            </div>
-           </div>
+            <img class="toy flower" src="flower.png" alt="flower">
+            <img class="toy house" src="house.png" alt="house">
         </div>
         <div class="logo">
             <img src="logo.svg" alt="Logo">
-        </div>
-        <div class="packshot noop">
-            <div class="mask">
-                <div class="rect first-rect angrp3"></div>
-                <div class="rect second-rect angrp3"></div>
-                <div class="rect third-rect angrp3"></div>
-            </div>
-            <div class="offer">
-                <div class="packtext head angrp3">Собери свой интерьер</div>
-                <div class="packtext sub angrp3">в приложении Леруа Мерлен</div>
-                <div class="btn angrp3">Скачать</div>
-            </div>
         </div>
     </div>
     <script src="script.js"></script>
