@@ -18,304 +18,272 @@ html, body {
     margin:0 auto;
 }
 
-body {
-    width:1080px;
-    height: 1350px;
-}
-
 .banner {
-    width: 1080px;
+    width:1080px;
     height: 1350px;
     position:relative;
     overflow:hidden;
     padding: 108px;
-    background:#5AB030;   
+    background-image: url(main_kitchen.jpg); 
 }
 
-.textblock {
-    user-select: none;
-    position:relative;
-    font-size:50px;
-    line-height: 95%;
-    font-family:'Medium';
-    color: white;
-    width: 100%;
-    height: 240px;
-    margin-bottom: 90px;
-    animation: appear 1s cubic-bezier(0.230, 1.000, 0.320, 1.000);
+.skip {
+    position: absolute;
+    opacity: 0;
 }
 
-.textblock span {
-    font-size:95px;
-    line-height: 95%;
-    font-family:'Bold';
+/* Picture */
+
+.kitchens {
+    position:absolute;
+    top: 0;
+    left: 0;
+    width:1080px;
+    height: 1350px;
 }
 
-.option {
-    user-select: none;
-    position: relative;
+
+/* Menu */
+
+.menu {
+    position: absolute;
+}
+
+.menu-box {
+    position: absolute;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    width: 865px;
-    height: 205px;
-    margin-bottom: 15px;
-    background: white;
-    border-radius: 25px;
-    opacity: 0;
-    animation: appear 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) forwards;
+    width: 864px;
+    height: 400px;
 }
 
-.frst {
-    animation-delay: .2s;
+.ch-text {
+    font-family:'Medium';
+    font-size: 37px;
+    line-height: 37px;
+    color: black;
+    margin-bottom: 60px;
 }
 
-.scnd {
-    animation-delay: .4s;
-}
-
-.thrd {
-    animation-delay: .6s;
-}
-
-
-.stylename {
+.menu-row {
     position: relative;
     display: flex;
     flex-direction: row;
-    width: 100%;
-    justify-content: center; 
+    justify-content: space-between;
 }
 
-.digit {
-    width: 205px;
-    text-align: center;
-    font-size:115px;
-    line-height: auto;
-    font-family:'Bold';
-    color: #5AB030;
-    padding-bottom: 5px;
-}
-
-.style {
-    width: 660px;
-    text-align: left;
-    font-size:62px;
-    font-family:'Medium';
-    color: black;
-    padding-top: 30px;
-}
-
-.toy {
-    position: absolute;
-    opacity: 0;
-    animation: appear 2s cubic-bezier(0.230, 1.000, 0.320, 1.000) forwards;
-}
-
-.toy IMG {
-    width: 100%;
-    height: 100%;
-}
-
-.flower {
-    width: 315px;
-    height: 295px;
-    top: 1020px;
-    left: 217px;
-    animation-delay: 200ms;
-}
-
-.house {
-    width: 523px;
-    height: 617px;
-    top: 215px;
-    left: 557px;
-    animation-delay: 300ms;
-}
-
-.deselect {
-    background: none;
-    border-style: solid;
-    border-width: 5px;
-    border-color: white;
-}
-.white-txt {
-    color: white;
-}
-
-.option:hover {
+.button-ch {
     cursor: pointer;
-    background: #FFE55A;
-    color: white;
-    transform: scale(120%) translateY(-200px);
-    transition: 0.5s;
+    width: 260px;
+    height: 260px;
+    position: relative;
+    overflow: hidden;
+    background-color:white;
+    opacity: 0;
 }
 
-.option:active {
-    cursor: default !important;
-    background: white;
-    color: white;
-    transition: 0.5s forwards;
-}
-
-.press-anim {
-    animation: press 500ms cubic-bezier(0.230, 1.000, 0.320, 1.000) once;
-}
-
-.disappear {
-    animation: disappear 1s cubic-bezier(0.480, 0.025, 0.960, 0.495) forwards;
-    cursor: default !important;
-}
-
-.second-sc {
+.kitchens IMG {
     position: absolute;
-    width: 1080px;
-    height: 1350px;
-    bottom: 0;
+    top: 0;
     left: 0;
 }
+ 
+.button-ch:active {
+    transform: scale(90%);
+    background-color:#FFE55A;
+}
 
-.picture {
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    left: 0;;
-    width: 1080px;
-    height: 972px;
+.table-over {
+    position: absolute !important;
+    top: 790px !important;
+    left: -100px !important;
 }
 
 .mask {
     position: absolute;
+    height: 1409px;
     bottom: 0;
+    left: -68px;
+}
+
+.packshot {
+    position:absolute;
     width: 1080px;
+    height: 1350px;
+    top: 0;
+    left: 0;
+    z-index: 5;
+}
+
+.offer {
+    position:absolute;
     display: flex;
-    align-items: baseline;
-    justify-content: flex-start;
-}
-
-.rect {
-    background: #5AB030;
-    opacity: 1 !important;
-    position: relative;
-    display: inline-block;
-    transform: scaleX(101%) translateY(-328px);
-}
-
-.first-rect {
-    width: 216px;
-    height: 702px;
-}
-
-.second-rect {
-    width: 324px;
-    height: 485px;
-}
-
-.third-rect {
-    width: 540px;
-    height: 594px;
-}
-
-.packtext {
-    position:relative;
-    font-size:98px;
-    line-height: 110%;
-    font-family:'Bold';
-    color: white;
+    flex-direction: column;
+    gap: 40px;
     width: 100%;
-    height: 270px;
-    opacity: 0;
-    padding: 900px 0 0 108px;
+    height: 700px;
+    padding: 90px 108px 108px 108px;
+
 }
 
-.packtext span {
+.head {
+    position:relative;
+    font-size: 127px;
+    font-family:'Bold';
+    color: #21282B;
+    line-height: 118px;
+    width: 100%;
+}
+
+
+.sub {
     position: relative;
-    font-size:32px;
-    line-height: 95%;
+    width: 100%;
+    font-size: 66px;
     font-family:'Medium';
-    border-radius: 12px;
-    border-width: 5px;
-    border-color: white;
-    border-style: solid;
-    padding: 30px;
+    color: #21282B;
 }
 
-.phone {
-    position: absolute;
-    width: 398px;
-    height: 811px;
-    top: 70px;
-    right: 70px;
-    opacity: 0;
-}
-
-.frame {
-    position: absolute;
-    background-image: url("iphone.png");
-    width: 398px;
-    height: 811px;
-}
-
-.kolbasa {
-    position: absolute;
-    overflow: hidden;
-    width: 361px;
-    height: 704px;
-    top: 36px;
-    left: 18px;
-    border-radius: 20px 20px 40px 40px;
-}
-
-.phone IMG {
-    position: absolute;
-    animation: scroll 60s linear infinite;
-}
-
-.second-appear {
-    user-select: none;
-    animation: scnd-scene-in 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) forwards;
+.btn {
+    position: relative;
+    width: fit-content; 
+    font-size: 38px;
+    color: #21282B;
+    font-family:'Bold';
+    background-color:#fdc300;
+    padding: 31px 87px;
+    margin-top: 570px;
 }
 
 .logo {
     position:absolute;
-    user-select: none;
     bottom: 0;
-    right: 108px;
-    width: 324px;
-    height: 155px;
+    right: 0;
+    width: 540px;
+    height: 207px;
+}
+
+
+/* Help */
+
+.fullop {
+    opacity: 1;
 }
 
 .logo IMG {
     width: 100%;
 }
 
+.mask IMG {
+    height: 100%;
+}
 
+.deselect {
+    opacity: .5;
+}
 
+.noop {
+    opacity: 0;
+}
 
-/* Анимация */
+.first_ch {
+    z-index: 10;
+}
+
+.second_ch {
+    z-index: 9;
+}
+
+.angrp3 {
+    transform: translateY(-300px);
+    opacity: 0;
+}
+
+.cta-btn {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+/* Animation */
+
+.press {
+    animation: press ease-in-out forwards;
+    animation-duration: 1s;
+}
+
+.appear {
+    animation: appear 1s ease-out forwards;
+}
+
+.disappear {
+    animation: disappear 1s ease-in forwards;
+}
+
+.kitappear {
+    animation: op 1s ease-out forwards;
+}
+
+.packappear {
+    animation: pack 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+}
+
+.kitdisp {
+    animation: kitchen-offset 1.2s cubic-bezier(0.770, 0.000, 0.175, 1.000) forwards;
+}
+
+.blinking {
+    animation: blink 10s ease-out forwards;
+    animation-iteration-count: infinite;
+}
+
+/* Frames */
+
+@keyframes press {
+    0%     {transform: scale(90%);}
+    35%    {transform: scale(110%);}
+    70%    {transform: scale(95%);}
+    100%   {transform: scale(100%);}
+}
 
 @keyframes appear {
-	0%		{ transform: scale(110%) translateY(300px); opacity: 0; }
-	100%	{ transform: scale(100%) translateY(0px); opacity: 1; }
+    0%     {transform: translateY(100px); opacity: 0;}
+    100%   {transform: translateY(0px); opacity: 1;}
+}
+
+@keyframes op {
+    0%     {opacity: 0;}
+    100%   {opacity: 1;}
 }
 
 @keyframes disappear {
-	0%		{ transform: scale(100%) translateY(0px); opacity: 1; }
-	100%	{ transform: scale(80%) translateY(300px); opacity: 0; }
+    0%     {transform: translateY(0px); }
+    100%   {transform: translateY(-100px); opacity: 0;}
 }
 
-@keyframes scnd-scene-in {
-    0%      {transform: scaleX(101%) translateY(-328px); opacity: 0;}
-    100%    {transform: scaleX(101%) translateY(0px); opacity: 1;}
+@keyframes pack {
+    0%     {transform: translateX(-1290px); opacity: 0;}
+    100%   {transform: translateX(0px); opacity: 1;}
 }
 
-@keyframes scroll {
-    0%      {transform: translateY(0px); }
-    100%    {transform: translateY(-2613px); }
+@keyframes kitchen-offset {
+    0%     {transform: translateX(0px);}
+    100%   {transform: translateX(210px);}
 }
 
-@keyframes press {
-    0%      {transform: scale(100%); }
-    30%     {transform: scale(110%); }
-    100%    {transform: scale(100%); }
+@keyframes blink {
+    0%     {opacity: 0;}
+    10%    {opacity: 1;}
+    20%    {opacity: 0;}
+    30%    {opacity: 1;}
+    40%    {opacity: 0;}
+    50%    {opacity: 1;}
+    60%    {opacity: 0;}
+    70%    {opacity: 1;}
+    80%    {opacity: 0;}
+    90%    {opacity: 1;}
+    100%   {opacity: 0;}
 }

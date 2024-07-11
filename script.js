@@ -1,83 +1,183 @@
 document.addEventListener('DOMContentLoaded', function() {
-    var option = document.querySelectorAll('.option');
-    var text = document.querySelector('.textblock');
-    var hero = document.querySelector('.picture');
-    var rect = document.querySelectorAll('.rect');
-    var image = document.getElementById('heroimg');
-    var final_text = document.querySelector('.packtext');
-    var toys = document.querySelectorAll('.toy');
-    var phone = document.querySelector('.phone')
-    var mainrm = document.getElementById("toRemove");
-    var delay = 50;
-    var scnd_offset = 1000; 
-    var lenght = option.length;
+    var option1 = document.querySelectorAll('.onestsc');
+    var option2 = document.querySelectorAll('.twostsc');
+    var anim1 = document.querySelectorAll('.angrp1');
+    var anim2 = document.querySelectorAll('.angrp2');
+    var anim3 = document.querySelectorAll('.angrp3');
+    var kitchen = document.querySelector('.kitchens');
+    var imgone = document.querySelector('.kitchen-over');
+    var imgtwo = document.querySelector('.table-over');
+    var ktLine = document.querySelector('.kitchen-line');
+    var tbLine = document.querySelector('.table-line');
+    var divone = document.querySelector('.first_ch');
+    var divtwo = document.querySelector('.second_ch');
+    var pack = document.querySelector('.packshot');
+    var ctaBtn = document.querySelector('.cta-btn');
+    const delay = 300;
 
-    function addDisappearClass(elements, offset) {
+    function addAppearaddClasss(elements, rmOffset, addClass, rmClass) {
+
         elements.forEach(function(element, i) {
+
             setTimeout(function() {
-                element.classList.add('disappear');
-            }, delay * (length - i) + offset);
+                element.classList.add(addClass);
+            }, delay * i);
+
+            setTimeout(function() {
+                element.classList.remove(rmClass);
+                element.classList.add('fullop');                
+            }, rmOffset + (delay + 1) * i);
+
         });
     }
-    
-    option.forEach(function(select) {
+
+
+    function addPress(element) {
+
+        element.classList.add('press');
+
+                setTimeout(function() {
+                    element.classList.remove('press');
+                }, 1000);
+
+    }
+
+    window.BGY_MRAID && window.BGY_MRAID.gameReady();
+
+    addAppearaddClasss(anim1, 1000, 'appear', 'appear');
+
+
+    console.log(option1);
+           
+    option1.forEach(function(select) {
 
         setTimeout(function() { 
+
             select.addEventListener('click', function() {
 
-                select.classList.add('pressAnim');
+                console.log(select);
                 
-                addDisappearClass(option, 0);
+                select.classList.add('press');
+                ktLine.remove();
+                tbLine.classList.remove('noop');
+                tbLine.classList.add('blinking');
 
-                option.forEach(function(other) {
+                setTimeout(function() {
+                    select.classList.remove('press');
+                }, 1000);
 
-                    // Проверяем, не является ли текущий элемент выбранным
+                option1.forEach(function(other, i) {
+
                     if (other !== select) {
-                        
-                        var child = other.querySelectorAll('.style, .digit');
-                        // Присваиваем класс всем элементам, кроме выбранного
+
+                        other.classList.remove('fullop');    
                         other.classList.add('deselect');
 
-                        child.forEach(function(whiteChild) {
-                            whiteChild.classList.add('white-txt')
-                        });
                     }
+
                 });
-                
-                addDisappearClass(toys, 200);
 
                 setTimeout(function() {
-                    text.classList.add('disappear');
-                }, delay * (lenght + 1));
+                    select.classList.remove('press');
+                }, 1000);
 
-                var style_img = select.getAttribute('data-image');
-                image.src = style_img;
-
-                setTimeout(function () {
-                      mainrm.remove();
-                  }, delay * (lenght + 1) + scnd_offset);
-
-                setTimeout(function() {
-                    final_text.classList.add('second-appear');
-                }, delay * (lenght + 1) + scnd_offset);
-
-                setTimeout(function() {
-                    hero.classList.add('second-appear');
-                }, delay * (lenght + 1) + scnd_offset);
-                
-                rect.forEach(function(rects, k){
+                anim1.forEach(function(element, i) {
 
                     setTimeout(function() {
-                        rects.classList.add('second-appear');
-                    }, delay * (lenght - k) + scnd_offset + 100);
+                        element.classList.add('disappear');
+                    },1000 + delay * i);
+        
                 });
 
                 setTimeout(function() {
-                    phone.classList.add('second-appear');
-                }, delay * (lenght + 1)+1400);
-               
-                console.log(lenght);
+                    divone.remove();
+                },3000 );
+
+                setTimeout(function() {
+
+                    divtwo.classList.remove('noop');
+                    addAppearaddClasss(anim2, 2000, 'appear', 'appear');
+                    
+                }, 2000);
+
+                var style_img = select.getAttribute('data-image');
+                imgone.src = style_img;
+
+                console.log(style_img);
+
             });
         }, 1000);
     })
-});
+
+    option2.forEach(function(select) {
+
+        setTimeout(function() { 
+
+            select.addEventListener('click', function() {
+
+                console.log(select);
+                
+                addPress(select);
+                tbLine.remove();
+
+                option2.forEach(function(other, i) {
+
+                    if (other !== select ) {
+
+                        other.classList.remove('fullop');    
+                        other.classList.add('deselect');
+
+                    }
+
+                });
+
+                anim2.forEach(function(element, i) {
+
+                    setTimeout(function() {
+                        element.classList.add('disappear');
+                    },1000 + delay * i);
+        
+                });
+
+                imgtwo.classList.add('appear');
+
+                setTimeout(function() {
+                    divtwo.remove();
+                },3000 );
+                
+                ctaBtn.style.zIndex = '99';
+
+                ctaBtn.addEventListener('click', function (e) {
+                      window.BGY_MRAID && window.BGY_MRAID.open();
+                });
+
+                window.BGY_MRAID && window.BGY_MRAID.gameEnd();
+
+                console.log(anim3);
+
+                setTimeout(function() {
+
+                    pack.classList.remove('noop');
+
+                    kitchen.classList.add('kitdisp')
+                    
+                    anim3.forEach(function(element, i) {
+
+                        setTimeout(function() {
+                            element.classList.add('packappear');
+                        }, delay / 6 * (5 - i));
+                        
+                    });
+                    
+                }, 2000);
+
+                var style_img = select.getAttribute('data-image');
+                imgtwo.src = style_img;
+
+                console.log(style_img);
+
+                    
+            });
+        },200);
+    })
+}); 
